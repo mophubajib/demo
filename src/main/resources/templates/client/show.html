@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Show</title>
+</head>
+<body>
+<p th:text="${client.getName() + ', ' + client.getNumberPhone()+', '+client.getBalance()}">client</p>
+
+<a th:href="@{/client/{id}/edit(id=${client.getId()})}">Edit</a>
+
+<form th:method="POST" th:action="@{/client/{id}(id=${client.getId()})}">
+    <input type="submit" value="Delete"/>
+</form>
+
+<br><br><br>
+
+
+<a th:href="@{/client/{id}/recipient (id=${client.getId()})}">Входящие переводы</a>
+<a th:href="@{/client/{id}/sender (id=${client.getId()})}">Исходящие перводы</a>
+
+</body>
+</html>

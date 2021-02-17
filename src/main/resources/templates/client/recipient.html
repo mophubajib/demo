@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<div th:each="rec : ${loadRec}">
+<a   th:text="${rec.getId() + ', '+ rec.getMessage() +', '+rec.getAmount()}">client</a>
+
+<!--
+    <a th:text="${client.getId + ', '+ client.getNumberPhone() +', '+client.getBalance()}">client</a>
+-->
+</div>
+
+
+</body>
+</html>

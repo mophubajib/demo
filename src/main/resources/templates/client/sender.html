@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div th:each="send : ${loadSender}">
+    <a   th:text="${send.getId() + ', '+ send.getMessage() +', '+send.getAmount()}">client</a>
+<!--
+    <a th:text="${client.getId + ', '+ client.getNumberPhone() +', '+client.getBalance()}">client</a>
+-->
+</div>
+
+<p th:text="${errorSender}"/>
+
+</body>
+</html>

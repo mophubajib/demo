@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div th:each="client : ${listClient}">
+    <a th:href="@{/client/{id}(id=${client.getId()})}"
+            th:text="${client.getName() + ', '+ client.getNumberPhone() +', '+client.getBalance()}">client</a>
+</div>
+
+<a href="/client/new">Создать нового клиента</a>
+
+</body>
+</html>

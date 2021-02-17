@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form th:method="POST">
+    <select name="sender">
+        <option th:each="send: ${sender}"
+                th:value="${send.getId()}"
+                th:text="${send.getName()}">getName</option>
+    </select>
+
+    <input type="number" name="pay"/>
+
+    <select name="rec">
+        <option th:each="rec: ${rec}"
+                th:value="${rec.getId()}"
+                th:text="${rec.getName()}">getName</option>
+    </select>
+
+    <input type="text" name="message"/>
+    <button type="submit">Посчитать</button>
+</form>
+
+
+<p th:text="${result}"/>
+
+
+
+</body>
+</html>

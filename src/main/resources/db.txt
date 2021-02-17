@@ -1,0 +1,68 @@
+create table client (
+                 id serial not null primary key,
+                 number_phone varchar(20),
+                 balance int
+             )
+insert into client(number_phone, balance) VALUES
+             ('90876576543', 20000)
+insert into client(number_phone, balance) VALUES
+             ('88876576543', 20000)
+insert into client(number_phone, balance) VALUES
+             ('77776576543', 20000)
+ insert into client(number_phone, balance) VALUES
+             ('11176576543', 20000)
+insert into client(number_phone, balance) VALUES
+             ('66676576543', 20000)
+create table payment (
+                 id serial not null primary key ,
+                 data varchar(20),
+                 amount int,
+                 message varchar(128),
+                 client_id int not null,
+                 FOREIGN key (client_id ) references client(id)
+
+
+             )
+
+
+             update client set name='Leha' where id=1;
+             update client set name='Kolya' where id=2;
+             update client set name='Jeka' where id=3;
+
+
+
+
+
+
+insert into client (number_phone, balance)
+VALUES ('123456789', 20000);
+insert into client (number_phone, balance)
+VALUES ('123456777', 20000);
+insert into client (number_phone, balance)
+VALUES ('123456888', 20000);
+insert into client (number_phone, balance)
+VALUES ('123456999', 20000);
+insert into client (number_phone, balance)
+VALUES ('123456666', 20000);
+
+insert into client (balance, name, number_phone)
+values (20000, 'Grisha', '123456789');
+insert into client (balance, name, number_phone)
+values (20000, 'Gena', '123456777');
+insert into client (balance, name, number_phone)
+values (20000, 'Leha', '123456888');
+insert into client (balance, name, number_phone)
+values (20000, 'Galya', '123456999');
+insert into client (balance, name, number_phone)
+values (20000, 'Tanya', '123456666');
+
+insert into payment (amount, data, message, recipient_id, sender_id)
+ VALUES (5000,'2516','hello',1,3);
+insert into payment (amount, data, message, recipient_id, sender_id)
+VALUES (5000,'2517','hello',2,3);
+insert into payment (amount, data, message, recipient_id, sender_id)
+VALUES (5000,'2518','hello',1,3);
+insert into payment (amount, data, message, recipient_id, sender_id)
+VALUES (5000,'2520','hello',3,1);
+insert into payment (amount, data, message, recipient_id, sender_id)
+VALUES (5000,'2535','hello',3,2);
